@@ -2,13 +2,15 @@ __author__ = 'Varun Nayyar'
 __date__ = "22/02/13 7:52 PM"
 __copyright__ = "Company Confidential. Copyright (c) Cochlear Ltd 2012."
 
-from Q21 import sumOfDivisors
 from numpy import array
+
+from Q21 import sumOfDivisors
+
 
 def isAbundant(number):
     divSum = sumOfDivisors(number)
     # print  number, divSum
-    if divSum>number:
+    if divSum > number:
         return True
     else:
         return False
@@ -20,11 +22,8 @@ def canBeExpressedAsSumof2(number, sortedArray):
         diff = number - sortedArray[i]
         if diff in sortedArray:
             return True
-        i+=1
+        i += 1
     return False
-
-
-
 
 
 def main():
@@ -39,11 +38,9 @@ def main():
     for i in range(5000):
         if not canBeExpressedAsSumof2(i, Abundants):
             print i
-            sumValues+=i
+            sumValues += i
 
     print sumValues
-
-
 
 
 if __name__ == "__main__":
