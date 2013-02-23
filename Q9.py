@@ -21,9 +21,8 @@ for num1 in range(999, 99,-1):
         if prod <= highestPalindrome: continue
         else:
             if isPalindrome(prod):
+                print num1, num2, prod
                 highestPalindrome = prod
-
-
 
 
 
