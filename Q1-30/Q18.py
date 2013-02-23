@@ -5,14 +5,15 @@ __copyright__ = "Company Confidential. Copyright (c) Cochlear Ltd 2012."
 
 def pathMaximizer(rowNum, columnNum):
     global Numbers
-    if rowNum == len(Numbers)-1:
+    if rowNum == len(Numbers) - 1:
         #last row
         return Numbers[rowNum][columnNum]
 
     else:
         #within bounds
         try:
-            return Numbers[rowNum][columnNum] + max(pathMaximizer(rowNum+1, columnNum), pathMaximizer(rowNum+1, columnNum+1))
+            return Numbers[rowNum][columnNum] + max(pathMaximizer(rowNum + 1, columnNum),
+                                                    pathMaximizer(rowNum + 1, columnNum + 1))
         except IndexError as e:
 
             print "Something weird"
@@ -22,13 +23,13 @@ def pathMaximizer(rowNum, columnNum):
 if __name__ == "__main__":
     global Numbers
     Numbers = []
-    with open("Data/q18Triangle.txt") as f:
+    with open("../Data/q18Triangle.txt") as f:
         for line in f:
             nums = line.split()
             nums = map(int, nums)
             Numbers.append(nums)
 
-    print pathMaximizer(0,0)
+    print pathMaximizer(0, 0)
 
 
 
