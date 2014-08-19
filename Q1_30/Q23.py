@@ -32,6 +32,7 @@ def main():
         if isAbundant(i):
             Abundants.append(i)
     print Abundants[:12]
+    print len(Abundants)
     Abundants = array(Abundants)
 
     sumValues = 0
